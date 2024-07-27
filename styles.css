@@ -7,25 +7,11 @@
     font-family: "Darker Grotesque", sans-serif;
 }
 
-.cabecalho{
+.cabecalho {
     background-color: yellow;
     width: 100%;
     height: 130px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .caixa_lobo {
     width: 1000px;
@@ -89,4 +75,46 @@
     font-size: 24px;
     font-weight: 500;
     line-height: 20px;
+}
+
+.footer {
+    display: flex;
+    width: 100vw;
+    height: 30vh;
+    background-color: #333333;
+}
+
+.sub_footer {
+    display: flex;
+    width: 660px;
+}
+
+.icons {
+    width: 25px;
+    height: 25px;
+}
+
+.footer_descricao {
+    max-width: 378px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    
+}
+.contato {
+    height: 102px;
+    width: 378px;
+}
+
+.footer_text {
+    line-height: 15px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+.footer_button {
+    width: 144px;
+    height: 30px;
 }
