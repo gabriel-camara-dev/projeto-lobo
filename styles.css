@@ -83,10 +83,13 @@
 
 .idade_lobo {
     font-size: 20px;
+    position: relative;
+    bottom: 10px;
 }
 
 .descricao_lobo {
     font-size: 24px;
     font-weight: 500;
     line-height: 20px;
+    margin-top: 10px;
 }
