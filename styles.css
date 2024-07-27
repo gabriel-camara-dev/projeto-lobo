@@ -7,11 +7,8 @@
     font-family: "Darker Grotesque", sans-serif;
 }
 
-.cabecalho {
-    background-color: yellow;
 /************CABECALHO*************/
-.cabecalho{
-
+.cabecalho {
     background-color: #85CDF5;
     width: 100%;
     height: 130px;
@@ -34,16 +31,6 @@
     width: 96px;
     height: 111px;
 }
-
-
-
-
-
-
-
-
-
-
 
 .caixa_lobo {
     width: 1000px;
@@ -116,16 +103,29 @@
     width: 100vw;
     height: 30vh;
     background-color: #333333;
+    justify-content: space-between;
 }
 
-.sub_footer {
+.left_sub_footer {
     display: flex;
     width: 660px;
+    justify-content: space-between;
+    margin-top: 51px;
+    margin-left: 219px;
+}
+
+.right_sub_footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 51px;
+    margin-right: 221px;
+    align-items: center;
+    gap: 8px;
 }
 
 .icons {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
 }
 
 .footer_descricao {
@@ -138,7 +138,10 @@
     
 }
 .contato {
-    height: 102px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 168px;
     width: 378px;
 }
 
@@ -149,7 +152,24 @@
 }
 
 .footer_button {
+    display: flex;
+    background-color: #DEB959;
+    color: #353535;
     width: 144px;
     height: 30px;
-    margin-top: 10px;
+    margin-top: 0px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 20px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+}
+
+.gradient_line {
+    width: 100vw;
+    height: 5px;
+    background: linear-gradient(270deg, #2C5680 0%, #DEB959 100%);
+    ;
+
 }
