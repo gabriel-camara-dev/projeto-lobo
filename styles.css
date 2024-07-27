@@ -45,7 +45,13 @@
 }
 
 .img_lobo {
-
+    position: relative;
+    top: 33px;
+    left: 33px;
+    background-image: url('assets/lobo-teste.png');
+    background-size: cover;
+    width: 430px;
+    height: 328px;
 }
 
 .dados_lobo {
