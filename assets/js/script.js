@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = primeira_pagina; i <= ultima_pagina; i++) {
       const pagina_numeracao = document.createElement('span')
       pagina_numeracao.textContent = i
-
+      
     
     }
 
