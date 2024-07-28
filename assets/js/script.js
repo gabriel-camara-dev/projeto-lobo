@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   let lobos = []
-  let currentPage = 1
-  const pageSize = 4
+  let pagina_inicial = 1
+  const tamanho_pagina = 4
+
+  const container_paginas = document.querySelector('.pagina_numeros')
+  const max_paginas = 5
 
   const container = document.querySelector('.lobos_container')
   const btn_voltar = document.querySelector('.btn_voltar')
@@ -96,48 +99,65 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function atualizarExibicao() {
-      container.innerHTML = '' // Limpa o contêiner antes de adicionar novos lobos
+      container.innerHTML = '' 
 
-      // Filtra os lobos com base na checkbox
-      const adotadosFiltro = adotados_checkbox.checked
-      const lobosFiltrados = lobos.filter(lobo => adotadosFiltro ? lobo.adotado : !lobo.adotado)
+      const lobos_adotados = adotados_checkbox.checked
+      const lobos_filtrados = lobos.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado)
 
-      // Paginacao
-      const startIndex = (currentPage - 1) * pageSize
-      const endIndex = startIndex + pageSize
-      const lobosParaExibir = lobosFiltrados.slice(startIndex, endIndex)
+      const startIndex = (pagina_inicial - 1) * tamanho_pagina
+      const endIndex = startIndex + tamanho_pagina
+      const lobosParaExibir = lobos_filtrados.slice(startIndex, endIndex)
 
       lobosParaExibir.forEach((lobo, index) => {
           const caixaLobo = criarCaixaLobo(lobo, startIndex + index)
           container.appendChild(caixaLobo)
       })
 
-      // Atualiza o estado dos botões de navegação
-      btn_voltar.disabled = currentPage === 1
-      btn_avançar.disabled = endIndex >= lobosFiltrados.length
+      btn_voltar.disabled = pagina_inicial === 1
+      btn_avançar.disabled = endIndex >= lobos_filtrados.length
   }
 
-  // Funções para navegação de página
+  function atualizarPaginas() {
+    container_paginas.innerHTML = ''
+
+    const total_paginas = Math.ceil(lobos.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado))
+
+    let primeira_pagina = Math.max(1, pagina_inicial - 2)
+    let ultima_pagina = Math.min(total_paginas, primeira_pagina + 4)
+
+    for (let i = primeira_pagina; i <= ultima_pagina; i++) {
+      const pagina_numeracao = document.createElement('span')
+      pagina_numeracao.textContent = i
+
+    
+    }
+
+  }
+
   btn_voltar.addEventListener('click', () => {
-      if (currentPage > 1) {
-          currentPage--
+      if (pagina_inicial > 1) {
+          pagina_inicial--
           atualizarExibicao()
+          window.scrollTo(0, 0)
       }
   })
 
   btn_avançar.addEventListener('click', () => {
-      const adotadosFiltro = adotados_checkbox.checked
-      const lobosFiltrados = lobos.filter(lobo => adotadosFiltro ? lobo.adotado : !lobo.adotado)
-      if (currentPage * pageSize < lobosFiltrados.length) {
-          currentPage++
+      const lobos_adotados = adotados_checkbox.checked
+      const lobos_filtrados = lobos.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado)
+      if (pagina_inicial * tamanho_pagina < lobos_filtrados.length) {
+          pagina_inicial++
           atualizarExibicao()
+          window.scrollTo(0, 0)
       }
   })
 
   adotados_checkbox.addEventListener('change', () => {
-      currentPage = 1
+      pagina_inicial = 1
       atualizarExibicao()
+      window.scrollTo(0, 0)
   })
+
 
   carregarLobos()
 })
