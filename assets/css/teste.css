@@ -1,0 +1,46 @@
+.banner {
+
+    background-image: url(../images/images_home/imageHomeAtt.svg);
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner .wrapper{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.wrapper h1{
+
+    font-weight: 700;
+    font-size: min(96px, 30vw);
+    text-align: center;
+    color: #FAFAFA;
+}
+
+.wrapper p{
+    font-weight: 400;
+    font-size: min(30px, 30vw);
+    padding: 0 26%;
+    text-align: center;
+    color: #FAFAFA;
+    padding-top: 16px;
+}
+
+.wrapper h1::after{
+    display: block;
+    content:" ";
+    width: 34%;
+    height: 4px;
+    background-color: #FAFAFA;
+    top: 4px;
+    left: 32%;
+    position: relative;
+}

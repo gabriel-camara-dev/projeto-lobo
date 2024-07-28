@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Darker+Grotesque:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Darker Grotesque", sans-serif;
+}
+
+.banner_3{
+
+    background-color: #333333;
+    height: 625px;
+}
+
+.wrapper_3{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 220px;
+    gap: 20px;
+}
+
+.titulo_valores{
+
+    color: #DEB959;
+    font-size: 48px;
+    text-align: center;
+    font-family: "Darker Grotesque";
+}
+
+.valores_box_pai{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 428px;
+    padding: 0px 221px;
+    gap: 45px;
+}
+
+.box_valores{
+
+    height: 428px;
+    min-width: 195px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.fundo_image_box{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 190px;
+    min-width: 190px;
+    background-color: #FAFAFA;
+    border-radius: 100%;
+}
+
+.images_box_valores{
+    
+    min-width: 129px;
+}
+
+.box_valores h3{
+
+    display: block;
+    text-align: center;
+    font-size: 34px;
+    color: #FAFAFA;
+    font-family: "Darker Grotesque";
+}
+
+.box_valores p{
+    
+    display: block;
+    text-align: center;
+    font-size: 23px;
+    color: #FAFAFA;
+    font-family: "Darker Grotesque";
+}
