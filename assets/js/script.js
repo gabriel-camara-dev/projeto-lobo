@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const tamanho_pagina = 4
 
   const pagina_numeros_container = document.querySelector('.pagina_numeros_container')
-  const max_paginas = 5
 
   const container = document.querySelector('.lobos_container')
   const btn_voltar = document.querySelector('.btn_voltar')
@@ -99,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function atualizarExibicao() {
-      container.innerHTML = '' 
+      container.innerHTML = ''
 
       const lobos_adotados = adotados_checkbox.checked
       const lobos_filtrados = lobos.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado)
@@ -123,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
     pagina_numeros_container.innerHTML = ''
 
     const total_paginas = Math.ceil(lobos.filter(lobo => adotados_checkbox.checked ? lobo.adotado : !lobo.adotado).length / tamanho_pagina);
-
 
     let primeira_pagina = Math.max(1, pagina_inicial - 2)
     let ultima_pagina = Math.min(total_paginas, primeira_pagina + 4)
