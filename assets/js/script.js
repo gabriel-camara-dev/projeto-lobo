@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let pagina_inicial = 1
   const tamanho_pagina = 4
 
-  const container_paginas = document.querySelector('.pagina_numeros')
+  const pagina_numeros_container = document.querySelector('.pagina_numeros_container')
   const max_paginas = 5
 
   const container = document.querySelector('.lobos_container')
@@ -115,12 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
       btn_voltar.disabled = pagina_inicial === 1
       btn_avançar.disabled = endIndex >= lobos_filtrados.length
+
+      atualizarPaginas()
   }
 
   function atualizarPaginas() {
-    container_paginas.innerHTML = ''
+    pagina_numeros_container.innerHTML = ''
 
-    const total_paginas = Math.ceil(lobos.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado))
+    const total_paginas = Math.ceil(lobos.filter(lobo => adotados_checkbox.checked ? lobo.adotado : !lobo.adotado).length / tamanho_pagina);
+
 
     let primeira_pagina = Math.max(1, pagina_inicial - 2)
     let ultima_pagina = Math.min(total_paginas, primeira_pagina + 4)
@@ -128,8 +131,17 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = primeira_pagina; i <= ultima_pagina; i++) {
       const pagina_numeracao = document.createElement('span')
       pagina_numeracao.textContent = i
-      
-    
+      pagina_numeracao.classList.add('pagina_numeros')
+
+      if (i === pagina_inicial) {
+        pagina_numeracao.classList.add('active')
+      }
+      pagina_numeracao.addEventListener('click', () => {
+        pagina_inicial = i
+        atualizarExibicao()
+        window.scrollTo(0,0)
+      })
+      pagina_numeros_container.appendChild(pagina_numeracao)
     }
 
   }

@@ -169,10 +169,10 @@
  .pagina_numeros {
      font-size: 24px;
      font-weight: 600;
-     margin-top: 5px;
+     margin: 5px 5px 0;
      cursor: pointer;
  }
  
- .pagina_numeros:active {
+.active {
      background-color: #DEB959;
  }
