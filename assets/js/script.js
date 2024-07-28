@@ -104,17 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const lobos_adotados = adotados_checkbox.checked
       const lobos_filtrados = lobos.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado)
 
-      const startIndex = (pagina_inicial - 1) * tamanho_pagina
-      const endIndex = startIndex + tamanho_pagina
-      const lobosParaExibir = lobos_filtrados.slice(startIndex, endIndex)
+      const index_inicial = (pagina_inicial - 1) * tamanho_pagina
+      const index_final = index_inicial + tamanho_pagina
+      const lobosParaExibir = lobos_filtrados.slice(index_inicial, index_final)
 
       lobosParaExibir.forEach((lobo, index) => {
-          const caixaLobo = criarCaixaLobo(lobo, startIndex + index)
+          const caixaLobo = criarCaixaLobo(lobo, index_inicial + index)
           container.appendChild(caixaLobo)
       })
 
       btn_voltar.disabled = pagina_inicial === 1
-      btn_avançar.disabled = endIndex >= lobos_filtrados.length
+      btn_avançar.disabled = index_final >= lobos_filtrados.length
 
       atualizarPaginas()
   }
