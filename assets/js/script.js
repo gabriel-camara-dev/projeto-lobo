@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let loboIndexAdotado = 0;
   
     function carregarLobos() {
-      fetch('lobinhos%20(1).json') 
+      fetch('assets/js/lobinhos.json') 
         .then(response => response.json()) 
         .then(data => {
           lobos = data;
