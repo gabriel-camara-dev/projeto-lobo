@@ -18,18 +18,24 @@
         </div>
     </div>
 </header>
-  <h1>Dados dos Lobos</h1>
+<main>
+    <div class="filtrar_procura">
+      <div class="barra_pesquisa">
+        <input type="text" class="input_barra_pesquisa">
+        <p class="botao_procurar">+ Lobos</p>
+      </div>
+      <div class="caixa_checkbox">
+        <input type="checkbox" class="adotados_checkbox">
+        <p class="label_checkbox">Ver lobinhos adotados</p>
+      </div>
+    </div>
+    <div class="lobos_container"></div>
+    <div class="paginas_nav">
+      <button class="btn_voltar"></button>
   
-  <div id="nao-adotados-container">
-    <h2>Lobos Não Adotados</h2>
-  </div>
-  
-  <div id="adotados-container">
-    <h2>Lobos Adotados</h2>
-  </div>
-
-  <button class="add-nao-adotados">Adicionar Lobo Não Adotado</button>
-  <button class="add-adotados">Adicionar Lobo Adotado</button>
+      <button class="btn_avançar"></button>
+    </div>
+</main>
 </body>
 <script src="assets/js/script.js"></script>
 </html>

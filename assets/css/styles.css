@@ -50,7 +50,60 @@
     width: 100%;
 }
 
+.filtrar_procura {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 0;
+}
 
+.barra_pesquisa {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.input_barra_pesquisa {
+    width: 808px;
+    height: 47px;
+    border: 1px solid black;
+    background-image: url('../images/lupa_pata_input.png');
+    background-position: 10px center;
+    background-size: 33px 33px;
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.botao_procurar {
+    font-size: 36px;
+    color: white;
+    background: #DEB959;
+    font-weight: 600;
+    padding: 0 20px 0 14px;
+}
+
+.caixa_checkbox {
+    display: flex;
+    gap: 23px;
+    align-items: center;
+    margin-right: 725px;
+}
+
+.adotados_checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.label_checkbox {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32.54px;
+}
 
 /*CAIXA LOBO INVERTIDO*/
 .invertida {
@@ -125,12 +178,37 @@
 .idade_lobo {
     font-size: 20px;
     position: relative;
+    font-weight: 400;
 }
 
 .descricao_lobo {
     font-size: 24px;
     font-weight: 500;
     line-height: 20px;
+}
+
+.lobos_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.paginas_nav {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.btn_voltar , .btn_avançar {
+    font-size: 40px;
+    font-weight: 700;
+    border: none;
+    background-color: white;
+    cursor: pointer;
 }
 
 .footer {
