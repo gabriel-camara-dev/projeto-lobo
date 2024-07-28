@@ -4,21 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/listar_lobinho.css">
     <title>Projeto Lobo</title>
 </head>
 <body>
-    <h1>Dados dos Lobos</h1>
-  
-  <div id="nao-adotados-container">
-    <h2>Lobos Não Adotados</h2>
-  </div>
-  
-  <div id="adotados-container">
-    <h2>Lobos Adotados</h2>
-  </div>
-
-  <button class="add-nao-adotados">Adicionar Lobo Não Adotado</button>
-  <button class="add-adotados">Adicionar Lobo Adotado</button>
+  <header>
+    <div class="cabecalho">
+        <div>
+            <a class="cabecalho_texto" href="lista_lobinho.html">Nossos Lobinhos</a>
+        </div>
+        <img class="cabecalho_icone" src="assets/images/Group 3.svg" alt="">
+        <div>
+            <a class="cabecalho_texto" id="teste" href="lista_lobinho.html">Quem Somos</a>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="filtrar_procura">
+      <div class="barra_pesquisa">
+        <input type="text" class="input_barra_pesquisa">
+        <p class="botao_procurar">+ Lobos</p>
+      </div>
+      <div class="caixa_checkbox">
+        <input type="checkbox" class="adotados_checkbox">
+        <p class="label_checkbox">Ver lobinhos adotados</p>
+      </div>
+    </div>
+    <div class="lobos_container"></div>
+    <div class="paginas_nav">
+      <button class="btn_voltar"></button>
+      <div class="pagina_numeros_container"></div>
+      <button class="btn_avançar"></button>
+    </div>
+</main>
 </body>
 <script src="assets/js/script.js"></script>
 </html>

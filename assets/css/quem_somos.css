@@ -1,55 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&family=Darker+Grotesque:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Darker Grotesque", sans-serif;
-}
-
-/************CABECALHO*************/
-.cabecalho {
-
-    background-color: #85CDF5;
-    width: 100%;
-    height: 130px;
-    padding: 10px 30px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
-    align-content: center;
-}
-
-.cabecalho_texto{
-
-    text-wrap: nowrap;
-    text-decoration: none;
-    font-size: 2rem;
-    font-weight: 600;
-    color: #333333;
-}
-
-.cabecalho_icone{
-
-    width: 96px;
-    height: 111px;
-}
-
-.cabecalho_texto::after{
-    display: block;
-    content:"";
-    width: 0%;
-    height: 4px;
+html {
     background-color: #333333;
-    bottom: 0;
-    left: 0;
-    transition: 0.5s ease-in-out;
 }
-.cabecalho_texto:hover::after{
-    width: 100%;
-}
-
 .footer {
     display: flex;
     width: 100vw;
@@ -163,4 +116,5 @@
     font-size: 24px;
     line-height: 32.54px;
     letter-spacing: 4px;
+
 }

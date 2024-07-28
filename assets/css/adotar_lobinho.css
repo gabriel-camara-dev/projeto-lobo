@@ -1,0 +1,109 @@
+/* IMAGEM E TÍTULO */
+.img_adotar_lobo {
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    border-radius: 50%;
+}
+
+.section_adotar_lobinho {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.container_titulo {
+    font-family: "Darker Grotesque", "serif";
+    margin-top: 50px;
+    font-size: 60px;
+    line-height: 81px;
+    font-weight: 600;
+    margin-left: 50px;
+}
+
+.topo_adotar_lobo {
+    display: flex;
+    justify-content: center;
+    margin-right: 100px;
+}
+
+.id_lobo {
+    display: flex;
+    font-size: 14px;
+    line-height: 19px;
+    justify-content: start;
+    
+}
+
+/* FORMULÁRIO DE ADOÇÃO */
+
+label {
+    font-size: 30px;
+    line-height: 40.68px;
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 100vw;
+}
+
+input {
+    border-top: 0;
+    border-left: 0;
+    font-size: 24px;
+    border-right: 0;
+    height: 42px;
+    border-color: grey;
+}
+
+.form_nome {
+    width: 868px;
+}
+
+.nome_e_idade {
+    display: flex;
+    gap: 20px;
+}
+
+.form_idade {
+    width: 72px;
+}
+
+.form_email {
+    width: 960px;
+}
+
+.form_completo {
+    width: 960px;
+    height: fit-content;
+}
+
+.container_email {
+    display: block;
+    width: 960px;
+}
+
+/* BOTÃO DE ADOTAR */
+.container_btn_adotar {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.btn_adotar {
+    font-family: "Darker Grotesque", "serif";
+    font-weight: 600;
+    width: 209px;
+    height: 60px;
+    border-radius: 0;
+    font-size: 36px;
+    line-height: 49px;
+    color: white;
+    background: #2C5680;
+    border: 1px solid #333333;
+}

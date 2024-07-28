@@ -4,22 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <title>Projeto Lobo</title>
+    <link rel="stylesheet" href="assets/css/adotar_lobinho.css">
+    <title>Adotar Lobinho</title>
 </head>
 <body>
-    <div class="caixa_lobo">
-        <div class="background_img_lobo">
-            <div class="img_lobo"></div>
-        </div>
-        <div class="dados_lobo">
-            <div class="info_lobo">
-                <p class="nome_lobo">Nome do Lobo</p>
-                <button class="btn_adotar">Adotar</button>
+    <header>
+        <div class="cabecalho">
+            <div>
+                <a class="cabecalho_texto" href="lista_lobinho.html">Nossos Lobinhos</a>
             </div>
-            <p class="idade_lobo">Idade: XX anos</p>
-            <p class="descricao_lobo">Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas. Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.Não obstante, o surgimento do comércio virtual faz parte de um processo de gerenciamento do levantamento das variáveis envolvidas.</p>
+            <img class="cabecalho_icone" src="assets/images/Group 3.svg" alt="">
+            <div>
+                <a class="cabecalho_texto" id="teste" href="lista_lobinho.html">Quem Somos</a>
+            </div>
         </div>
-    </div>
+    </header>
+    <section class="section_adotar_lobinho">
+        <div class="topo_adotar_lobo">
+            <img src="assets/images/lobo.png" class="img_adotar_lobo">
+            <div class="container_titulo">
+                <span class="nome_lobo">Adote o(a) NomeDoLobo</span>
+                <span class="id_lobo">ID:314159</span>
+            </div> 
+        </div>
+        <div class="form_completo">
+            <form>
+                <div class="nome_e_idade">
+                    <div class="container_nome">
+                        <label>Seu nome:</label>
+                        <input type="text" class="form_nome">
+                    </div>
+                    <div class="container_idade">
+                        <label>Idade:</label>
+                        <input type="text" class="form_idade">
+                    </div>
+                </div>
+                <div class="container_email">
+                    <label>E-mail:</label>
+                    <input type="text" class="form_email">
+                </div>
+            </form>
+        </div>
+        <div class="container_btn_adotar">
+            <button class="btn_adotar">
+                Adotar
+            </button>
+        </div>
+    </section>
+    <footer class="main_footer">
+        <div class="gradient_line"></div>
+        <div class="footer">
+            <div class="left_sub_footer">
+                <iframe width="250" height="168" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=ic%20uff+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps tracker sport</a></iframe>
+                <div class="contato">
+                    <div class="footer_descricao">
+                        <img src="assets/images/pin.png" class="icons">
+                        <p class="footer_text">Av. Milton Tavares de Souza, s/n - Sala 115 B - Boa Viagem, Niterói - RJ, 24210-315</p>
+                    </div>
+                    <div class="footer_descricao">
+                            <img src="assets/images/phone.png" class="icons">
+                            <p class="footer_text">(99) 99999-9999</p>
+                    </div>
+                    <div class="footer_descricao">
+                        <img src="assets/images/msg.png" class="icons">
+                        <p class="footer_text">salve-lobos@lobINhos.com</p>
+                    </div>
+                    <button class="footer_button">Quem Somos</button>
+                </div>
+            </div>
+            <div class="right_sub_footer">
+                <p class="footer_text">Desenvolvido com</p>
+                <img src="assets/images/paw.png" class="footer-image">
+            </div>
+        </div>
+    </footer>
 </body>
-<script src="assets/js/script.js"></script>
 </html>
