@@ -219,6 +219,7 @@
     bottom: 33px;
     left: -41px;
     background-color: #2C5680;
+    border:4px solid #333333;
 }
 
 .informacoes_lobo_normal{
@@ -280,6 +281,7 @@
     bottom: 33px;
     right: -41px;
     background-color: #2C5680;
+    border:4px solid #333333;
 }
 
 .informacoes_lobo_invertido{
