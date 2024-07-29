@@ -172,3 +172,14 @@
     line-height: 32.54px;
     letter-spacing: 4px;
 }
+
+::-webkit-scrollbar {
+    color: transparent;
+    width: 7.5px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #5dbef1;
+    border-radius: 5px;
+}

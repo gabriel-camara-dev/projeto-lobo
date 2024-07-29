@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn_voltar = document.querySelector('.btn_voltar')
     const btn_avançar = document.querySelector('.btn_avançar')
     const adotados_checkbox = document.querySelector('.adotados_checkbox')
-    const wrapper = document.querySelector('.wrapper')
     
     btn_voltar.textContent = '<<'
     btn_avançar.textContent = '>>'
