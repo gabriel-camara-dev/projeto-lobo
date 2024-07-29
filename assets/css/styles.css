@@ -71,11 +71,6 @@
     background: linear-gradient(270deg, #2C5680 0%, #DEB959 100%);
 }
 
-.main_footer {
-    bottom: 0;
-    position: absolute;
-}
-
 .left_sub_footer {
     display: flex;
     width: 660px;
@@ -182,4 +177,14 @@
 ::-webkit-scrollbar-thumb {
     background-color: #5dbef1;
     border-radius: 5px;
+    
+/* TESTE */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.middle_section {
+    flex-grow: 1;
 }
