@@ -212,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /**/
     
 })
+
 window.addEventListener('load', () => {
     const lobo = JSON.parse(localStorage.getItem('loboId'))
 
@@ -219,8 +220,12 @@ window.addEventListener('load', () => {
     lobo_nome.textContent = lobo.nome
 
     const descricao_lobo = document.querySelector('.descricao_lobo_escolhido')
-    let imagem_lobo = document.querySelector('.imagem_lobo_normal')
+
 
     descricao_lobo.textContent = lobo.descricao
     imagem_lobo.style.backgroundImage = `url(${lobo.imagem})`
+    descricao_lobo.textContent = lobo.descricao
+
+    let imagem_lobo = document.querySelector('.imagem_teste')
+    imagem_lobo.src = lobo.imagem
 })
