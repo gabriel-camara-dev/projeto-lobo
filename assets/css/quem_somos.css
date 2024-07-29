@@ -1,87 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-html {
-    background-color: #333333;
-}
-.footer {
-    display: flex;
-    width: 100vw;
-    height: 275px;
-    background-color: #333333;
-    justify-content: space-between;
-    overflow: hidden;
-}
-
-.left_sub_footer {
-    display: flex;
-    width: 660px;
-    justify-content: space-between;
-    margin-top: 51px;
-    margin-left: 219px;
-}
-
-.right_sub_footer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 51px;
-    margin-right: 221px;
-    align-items: center;
-    gap: 8px;
-}
-
-.icons {
-    width: 20px;
-    height: 20px;
-}
-
-.footer_descricao {
-    max-width: 378px;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-    
-}
-.contato {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 168px;
-    width: 378px;
-}
-
-.footer_text {
-    line-height: 15px;
-    font-size: 18px;
-    color: rgb(255, 255, 255);
-}
-
-.footer_button {
-    display: flex;
-    background-color: #DEB959;
-    color: #353535;
-    width: 144px;
-    height: 30px;
-    margin-top: 0px;
-    font-size: 25px;
-    font-weight: 700;
-    line-height: 20px;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-}
-
-.gradient_line {
-    width: 100vw;
-    height: 5px;
-    background: linear-gradient(270deg, #2C5680 0%, #DEB959 100%);
-}
-
-.main_footer {
-    bottom: 0;
-}
-
 .middle_section {
     display: flex;
     flex-direction: column;
@@ -116,5 +34,4 @@ html {
     font-size: 24px;
     line-height: 32.54px;
     letter-spacing: 4px;
-
 }
