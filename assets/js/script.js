@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn_voltar = document.querySelector('.btn_voltar')
     const btn_avançar = document.querySelector('.btn_avançar')
     const adotados_checkbox = document.querySelector('.adotados_checkbox')
+    const wrapper = document.querySelector('.wrapper')
     
     btn_voltar.textContent = '<<'
     btn_avançar.textContent = '>>'
@@ -34,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarExibicao() 
                 return lobos
             })}
-    loboID = []
    
     function criarCaixaLobo(lobo, index) {
         const caixaLobo = document.createElement('div')
@@ -87,8 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnAdotar.textContent = lobo.adotado ? 'Adotado' : 'Adotar'
         btnAdotar.addEventListener('click', () => {
             window.location.href = '../../show_lobinho.html'
-            loboID.push(lobo)
-            localStorage.setItem('loboId', JSON.stringify(loboID))
+            localStorage.setItem('loboId', JSON.stringify(lobo))
         })
 
         if (lobo.adotado) {
@@ -187,4 +186,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
     /**/
+    
+})
+window.addEventListener('load', () => {
+    const lobo = JSON.parse(localStorage.getItem('loboId'))
+    
+    const lobo_nome = document.querySelector('.lobo_nome')
+    lobo_nome.textContent = lobo.nome
 })
