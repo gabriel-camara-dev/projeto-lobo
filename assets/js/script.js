@@ -221,10 +221,6 @@ window.addEventListener('load', () => {
     lobo_nome.textContent = lobo.nome
 
     const descricao_lobo = document.querySelector('.descricao_lobo_escolhido')
-
-
-    descricao_lobo.textContent = lobo.descricao
-    imagem_lobo.style.backgroundImage = `url(${lobo.imagem})`
     descricao_lobo.textContent = lobo.descricao
 
     let imagem_lobo = document.querySelector('.imagem_teste')
