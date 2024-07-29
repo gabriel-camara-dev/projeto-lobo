@@ -95,7 +95,7 @@ input {
     margin-bottom: 50px;
 }
 
-.btn_adotar {
+.btn_adotar_lobinho {
     font-family: "Darker Grotesque", "serif";
     font-weight: 600;
     width: 209px;
@@ -106,4 +106,5 @@ input {
     color: white;
     background: #2C5680;
     border: 1px solid #333333;
+    cursor: pointer;
 }
