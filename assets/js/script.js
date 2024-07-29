@@ -84,6 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnAdotar = document.createElement('p')
         btnAdotar.classList.add('btn_adotar')
         btnAdotar.textContent = lobo.adotado ? 'Adotado' : 'Adotar'
+        btnAdotar.addEventListener('click', () => {
+            window.location.href = '../../show_lobinho.html'
+            localStorage.setItem('loboId', lobo.id)
+        })
 
         if (lobo.adotado) {
             btnAdotar.classList.add('adotado')
