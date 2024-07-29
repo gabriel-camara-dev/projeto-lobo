@@ -177,7 +177,8 @@
 ::-webkit-scrollbar-thumb {
     background-color: #5dbef1;
     border-radius: 5px;
-    
+} 
+
 /* TESTE */
 body {
     display: flex;
