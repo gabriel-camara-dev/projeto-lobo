@@ -13,14 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
     btn_avançar.textContent = '>>'
 
     let lobos_lista = []
+    let lobos_filtrados = []
+
     function carregarLobos() {
         return fetch('assets/js/lobinhos.json')
             .then(response => response.json())
             .then(data => {
-                lobos = data
-                lobos_lista = lobos
-                atualizarExibicao() 
-                return lobos
+                lobos_lista = data
+                aplicarFiltros()
+                return lobos_lista
             })
     }
     carregarLobos()
@@ -84,10 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnAdotar = document.createElement('p')
         btnAdotar.classList.add('btn_adotar')
         btnAdotar.textContent = lobo.adotado ? 'Adotado' : 'Adotar'
-        btnAdotar.addEventListener('click', () => {
-            window.location.href = '../../show_lobinho.html'
-            localStorage.setItem('loboId', JSON.stringify(lobo))
-        })
 
         infoLobo.appendChild(nomeIdadeLobo)
         infoLobo.appendChild(btnAdotar)
@@ -111,18 +108,45 @@ document.addEventListener('DOMContentLoaded', () => {
             dadosLobo.appendChild(caixa_dono)
         }
 
+        if (!btnAdotar.classList.contains('adotado'))
+            btnAdotar.addEventListener('click', () => {
+                window.location.href = '../../show_lobinho.html'
+                localStorage.setItem('loboId', JSON.stringify(lobo))
+            })
+
         caixaLobo.appendChild(background_img_lobo)
         caixaLobo.appendChild(dadosLobo)
 
         return caixaLobo
     }
+ 
+    function aplicarFiltros() {
+        const termo_procurar = input_barra_pesquisa.value.toLowerCase()
+        const lobos_adotados = adotados_checkbox.checked
+
+        lobos_filtrados = lobos_lista.filter(lobo => {
+            const nomeMatch = lobo.nome.toLowerCase().includes(termo_procurar)
+            const adotadoMatch = lobos_adotados ? lobo.adotado : !lobo.adotado
+            return nomeMatch && adotadoMatch
+        })
+        pagina_inicial = 1
+        atualizarExibicao()
+        window.scrollTo(0, 0)
+    }
+
+    let input_barra_pesquisa = document.querySelector('.input_barra_pesquisa')
+    let botao_procurar = document.querySelector('.botao_procurar')
+
+    botao_procurar.addEventListener('click', aplicarFiltros)
+    input_barra_pesquisa.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            aplicarFiltros()
+        }
+    })
 
     function atualizarExibicao() {
         console.log(lobos_lista)
         container.innerHTML = ''
-
-        const lobos_adotados = adotados_checkbox.checked
-        const lobos_filtrados = lobos_lista.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado)
 
         const index_inicial = (pagina_inicial - 1) * tamanho_pagina
         const index_final = index_inicial + tamanho_pagina
@@ -142,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function atualizarPaginas() {
         pagina_numeros_container.innerHTML = ''
 
-        const total_paginas = Math.ceil(lobos_lista.filter(lobo => adotados_checkbox.checked ? lobo.adotado : !lobo.adotado).length / tamanho_pagina);
+        const total_paginas = Math.ceil(lobos_filtrados.length / tamanho_pagina)
 
         let primeira_pagina = Math.max(1, pagina_inicial - 2)
         let ultima_pagina = Math.min(total_paginas, primeira_pagina + 4)
@@ -164,11 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    adotados_checkbox.addEventListener('change', () => {
-        pagina_inicial = 1
-        atualizarExibicao()
-        window.scrollTo(0, 0)
-    })
+    adotados_checkbox.addEventListener('change', aplicarFiltros)
+
+    console.log(lobos_filtrados)
 
     /* PAGINAÇÃO */
     btn_voltar.addEventListener('click', () => {
@@ -192,7 +214,13 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 window.addEventListener('load', () => {
     const lobo = JSON.parse(localStorage.getItem('loboId'))
-    
+
     const lobo_nome = document.querySelector('.lobo_nome')
     lobo_nome.textContent = lobo.nome
+
+    const descricao_lobo = document.querySelector('.descricao_lobo_escolhido')
+    let imagem_lobo = document.querySelector('.imagem_lobo_normal')
+
+    descricao_lobo.textContent = lobo.descricao
+    imagem_lobo.style.backgroundImage = `url(${lobo.imagem})`
 })
