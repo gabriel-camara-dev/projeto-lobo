@@ -126,6 +126,7 @@
     font-size: 25px;
     font-weight: 700;
     line-height: 20px;
+    text-decoration: none;
     align-items: center;
     justify-content: center;
     border: 0;
@@ -177,6 +178,7 @@
 ::-webkit-scrollbar-thumb {
     background-color: #5dbef1;
     border-radius: 5px;
+}
     
 /* TESTE */
 body {
