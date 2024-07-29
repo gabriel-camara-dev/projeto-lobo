@@ -36,6 +36,12 @@
     height: 111px;
 }
 
+/*****VER SE VALE A PENA*********/
+.cabecalho_icone:hover{
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+}
+
 .cabecalho_texto::after{
     display: block;
     content:"";
