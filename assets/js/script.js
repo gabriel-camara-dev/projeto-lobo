@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let lobos = []
     let pagina_inicial = 1
     const tamanho_pagina = 4
 
@@ -13,17 +12,29 @@ document.addEventListener('DOMContentLoaded', () => {
     btn_voltar.textContent = '<<'
     btn_avançar.textContent = '>>'
 
-    
-
+    let lobos_lista = []
     function carregarLobos() {
-        fetch('assets/js/lobinhos.json')
+        return fetch('assets/js/lobinhos.json')
             .then(response => response.json())
             .then(data => {
                 lobos = data
-                atualizarExibicao()
+                lobos_lista = lobos
+                atualizarExibicao() 
+                return lobos
             })
     }
+    carregarLobos()
 
+    function criarNovoLobo(novo_lobo) {
+        return fetch('assets/js/lobinhos.json')
+            .then(response => response.json())
+            .then(data => {
+                lobos = data
+                lobos_lista.unshift(novo_lobo)
+                atualizarExibicao() 
+                return lobos
+            })}
+   
     function criarCaixaLobo(lobo, index) {
         const caixaLobo = document.createElement('div')
         caixaLobo.classList.add('caixa_lobo')
@@ -32,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
             caixaLobo.classList.add('invertida')
         }
 
-        const backgroundImgLobo = document.createElement('div')
-        backgroundImgLobo.classList.add('background_img_lobo')
+        const background_img_lobo = document.createElement('div')
+        background_img_lobo.classList.add('background_img_lobo')
 
         const imgLobo = document.createElement('div')
         imgLobo.classList.add('img_lobo')
@@ -43,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         imgLobo.style.backgroundImage = `url(${lobo.imagem})`
-        backgroundImgLobo.appendChild(imgLobo)
+        background_img_lobo.appendChild(imgLobo)
 
         const dadosLobo = document.createElement('div')
         dadosLobo.classList.add('dados_lobo')
@@ -93,37 +104,38 @@ document.addEventListener('DOMContentLoaded', () => {
         descricaoLobo.textContent = lobo.descricao
 
         dadosLobo.appendChild(descricaoLobo)
-        caixaLobo.appendChild(backgroundImgLobo)
+        caixaLobo.appendChild(background_img_lobo)
         caixaLobo.appendChild(dadosLobo)
 
         return caixaLobo
     }
 
     function atualizarExibicao() {
+        console.log(lobos_lista)
         container.innerHTML = ''
 
         const lobos_adotados = adotados_checkbox.checked
-        const lobos_filtrados = lobos.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado)
+        const lobos_filtrados = lobos_lista.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado)
 
         const index_inicial = (pagina_inicial - 1) * tamanho_pagina
         const index_final = index_inicial + tamanho_pagina
-        const lobosParaExibir = lobos_filtrados.slice(index_inicial, index_final)
+        const lobos_para_exibir = lobos_filtrados.slice(index_inicial, index_final)
 
-        lobosParaExibir.forEach((lobo, index) => {
+        lobos_para_exibir.forEach((lobo, index) => {
             const caixaLobo = criarCaixaLobo(lobo, index_inicial + index)
             container.appendChild(caixaLobo)
         })
  
+        /* PAGINAÇÃO */
         btn_voltar.disabled = pagina_inicial === 1
         btn_avançar.disabled = index_final >= lobos_filtrados.length
-
         atualizarPaginas()
     }
 
     function atualizarPaginas() {
         pagina_numeros_container.innerHTML = ''
 
-        const total_paginas = Math.ceil(lobos.filter(lobo => adotados_checkbox.checked ? lobo.adotado : !lobo.adotado).length / tamanho_pagina);
+        const total_paginas = Math.ceil(lobos_lista.filter(lobo => adotados_checkbox.checked ? lobo.adotado : !lobo.adotado).length / tamanho_pagina);
 
         let primeira_pagina = Math.max(1, pagina_inicial - 2)
         let ultima_pagina = Math.min(total_paginas, primeira_pagina + 4)
@@ -143,9 +155,15 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         pagina_numeros_container.appendChild(pagina_numeracao)
         }
-
     }
 
+    adotados_checkbox.addEventListener('change', () => {
+        pagina_inicial = 1
+        atualizarExibicao()
+        window.scrollTo(0, 0)
+    })
+
+    /* PAGINAÇÃO */
     btn_voltar.addEventListener('click', () => {
         if (pagina_inicial > 1) {
             pagina_inicial--
@@ -153,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo(0, 0)
         }
     })
-
     btn_avançar.addEventListener('click', () => {
         const lobos_adotados = adotados_checkbox.checked
         const lobos_filtrados = lobos.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado)
@@ -163,12 +180,5 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo(0, 0)
         }
     })
-
-    adotados_checkbox.addEventListener('change', () => {
-        pagina_inicial = 1
-        atualizarExibicao()
-        window.scrollTo(0, 0)
-    })
-
-    carregarLobos()
+    /**/
 })
