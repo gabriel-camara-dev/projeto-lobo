@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 atualizarExibicao() 
                 return lobos
             })}
+    loboID = []
    
     function criarCaixaLobo(lobo, index) {
         const caixaLobo = document.createElement('div')
@@ -86,7 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btnAdotar.textContent = lobo.adotado ? 'Adotado' : 'Adotar'
         btnAdotar.addEventListener('click', () => {
             window.location.href = '../../show_lobinho.html'
-            localStorage.setItem('loboId', lobo.id)
+            loboID.push(lobo)
+            localStorage.setItem('loboId', JSON.stringify(loboID))
         })
 
         if (lobo.adotado) {
