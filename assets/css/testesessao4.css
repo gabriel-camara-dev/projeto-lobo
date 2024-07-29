@@ -1,0 +1,157 @@
+.banner_4{
+    background-color: aqua;
+}
+
+.wrapper_4{
+
+    background-color: blueviolet;
+    width: 100%;
+    min-width: 789px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0px 116px 0px;
+    gap: 40px;
+}
+
+.titulo_secao_4{
+
+    background-color: black;
+    color: #DEB959;
+    font-size: 48px;
+    text-align: center;
+    min-width: 512px;
+    translate: 0;
+}
+
+/**********Exemplo Lobo Normal**********/
+.exemplo_lobo{
+
+    background-color: aquamarine;
+    width: 995px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.imagem_lobo_normal{
+
+    width: 512px;
+    height: 361px;
+    background-color: coral;
+    position: relative;
+}
+
+.imagem_lobo_normal img{
+    
+    width: 430px;
+    height: 328px;
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.fundo_imagem_lobo{
+    width: 430px;
+    height: 328px;
+    position: absolute;
+    bottom: 33px;
+    left: -41px;
+    background-color: #2C5680;
+}
+
+.informacoes_lobo_normal{
+    width: 461px;
+    height: 339px;
+    background-color: crimson;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.nome_lobo_normal{
+    font-size: 36px;
+}
+.idade_lobo_normal{
+    font-size: 20px;
+}
+.descricao_lobo_normal{
+    margin-top: 30px;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+
+/******************LOBO INVERTIDO*******************/
+.exemplo_lobo_invertido{
+    
+    background-color:chartreuse;
+    width: 995px;
+    margin-top: 71px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    position: relative;
+}
+
+.imagem_lobo_invertido{
+    
+    width: 512px;
+    height: 361px;
+    background-color: coral;
+    position: relative;
+}
+
+.imagem_lobo_invertido img{
+    
+    width: 430px;
+    height: 328px;
+    position: absolute; 
+    bottom: 0;
+    right: 0px;
+    z-index: 1;
+}
+
+.fundo_imagem_lobo_invertido{
+    width: 430px;
+    height: 328px;
+    position: absolute;
+    bottom: 33px;
+    right: -41px;
+    background-color: #2C5680;
+}
+
+.informacoes_lobo_invertido{
+    width: 461px;
+    height: 339px;
+    background-color: crimson;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.nome_lobo_invertido{
+    text-align: right;
+    font-size: 36px;
+}
+
+.idade_lobo_invertido{
+    text-align: right;
+    font-size: 20px;
+}
+
+.descricao_lobo_invertido{
+    text-align: right;
+    margin-top: 30px;
+    font-size: 24px;
+    line-height: 20px;
+}
