@@ -129,6 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const adotadoMatch = lobos_adotados ? lobo.adotado : !lobo.adotado
             return nomeMatch && adotadoMatch
         })
+        termo_procurar.textContent = ''
         pagina_inicial = 1
         atualizarExibicao()
         window.scrollTo(0, 0)
