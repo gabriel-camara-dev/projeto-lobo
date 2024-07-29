@@ -89,15 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('loboId', JSON.stringify(lobo))
         })
 
-        if (lobo.adotado) {
-            btnAdotar.classList.add('adotado')
-        }
-
         infoLobo.appendChild(nomeIdadeLobo)
         infoLobo.appendChild(btnAdotar)
-
         dadosLobo.appendChild(infoLobo)
-
+        
         const descricaoLobo = document.createElement('p')
         descricaoLobo.classList.add('descricao_lobo')
 
@@ -106,8 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         descricaoLobo.textContent = lobo.descricao
-
         dadosLobo.appendChild(descricaoLobo)
+
+        if (lobo.adotado) {
+            btnAdotar.classList.add('adotado')
+            const caixa_dono = document.createElement('p')
+            caixa_dono.classList.add('caixa_dono')
+            caixa_dono.textContent = `Adotado por: ${lobo.nomeDono}`
+            dadosLobo.appendChild(caixa_dono)
+        }
+
         caixaLobo.appendChild(background_img_lobo)
         caixaLobo.appendChild(dadosLobo)
 
