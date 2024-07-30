@@ -9,9 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn_avançar = document.querySelector('.btn_avançar')
     const adotados_checkbox = document.querySelector('.adotados_checkbox')
     const input_barra_pesquisa = document.querySelector('.input_barra_pesquisa')
-    const botao_procurar = document.querySelector('.botao_procurar')
 
-    let lobos_lista = JSON.parse(localStorage.getItem('lobos_atualizados'))
+    let lobos_lista = JSON.parse(localStorage.getItem('lobos'))
     let lobos_filtrados = []
     aplicarFiltros()
 

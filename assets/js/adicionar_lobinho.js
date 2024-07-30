@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           lobos_lista.push(lobo)
-          localStorage.setItem('lobos_atualizados', JSON.stringify(lobos_lista))
+          localStorage.setItem('lobos', JSON.stringify(lobos_lista))
      }
      function resetarInputs() {
           adicionar_lobinho_nome.value = ''

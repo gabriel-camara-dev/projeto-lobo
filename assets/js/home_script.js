@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
                     lobos_lista = data
-                    localStorage.setItem('lobos', JSON.stringify(lobos_lista))
+                    if (!localStorage.getItem('lobos')) {
+                        localStorage.setItem('lobos', JSON.stringify(lobos_lista))
+                    }
                     /********Escolhendo 2 valores aleatorios**********/
                     function indexAleatorio(tamanhoArray) {
                         return Math.floor(Math.random() * tamanhoArray);
@@ -47,8 +49,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     carregandoJSON(); 
 })
-
-if (!localStorage.getItem('lobos_atualizados')) {
-    let lobos_atualizados = JSON.parse(localStorage.getItem('lobos'));
-    localStorage.setItem('lobos_atualizados', JSON.stringify(lobos_atualizados));
-}
