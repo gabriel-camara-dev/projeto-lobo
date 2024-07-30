@@ -60,7 +60,7 @@ input {
     border-color: grey;
 }
 
-.form_nome {
+#form_nome {
     width: 868px;
 }
 
@@ -69,11 +69,11 @@ input {
     gap: 20px;
 }
 
-.form_idade {
+#form_idade {
     width: 72px;
 }
 
-.form_email {
+#form_email {
     width: 960px;
 }
 
