@@ -9,7 +9,7 @@
 
 /************CABECALHO*************/
 .cabecalho {
-
+    overflow: hidden;
     background-color: #85CDF5;
     width: 100%;
     height: 130px;
@@ -170,7 +170,7 @@
 }
 
 ::-webkit-scrollbar {
-    color: transparent;
+    background-color: lightgrey;
     width: 7.5px;
     border-radius: 5px;
 }
