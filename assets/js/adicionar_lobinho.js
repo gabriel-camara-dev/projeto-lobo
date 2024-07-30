@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
           if (descricao === '') {
                alert('Insira uma descrição para seu lobo')
           }
-
           let lobos_lista = JSON.parse(localStorage.getItem('lobos')) || []
+          const id = lobos_lista.length + 1
           let lobo = {
-               "id": lobos_lista.length,
+               "id": id,
                "nome": `${nome}`,
                "idade": idade,
                "descricao": `${descricao}`,
