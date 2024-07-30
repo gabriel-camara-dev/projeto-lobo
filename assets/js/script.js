@@ -109,10 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const lobos_adotados = adotados_checkbox.checked
 
         lobos_filtrados = lobos_lista.filter(lobo => {
-            const nomeMatch = lobo.nome.toLowerCase().includes(termo_procurar)
-            const adotadoMatch = lobos_adotados ? lobo.adotado : !lobo.adotado
-            return nomeMatch && adotadoMatch
+            if (lobo === null) { console.log('fodase')} 
+            else { const nomeMatch = lobo.nome.toLowerCase().includes(termo_procurar)
+                const adotadoMatch = lobos_adotados ? lobo.adotado : !lobo.adotado
+                return nomeMatch && adotadoMatch
+            }
         })
+        console.log(lobos_filtrados)
         termo_procurar.textContent = ''
         pagina_inicial = 1
         atualizarExibicao()
@@ -128,8 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const lobos_para_exibir = lobos_filtrados.slice(index_inicial, index_final)
 
         lobos_para_exibir.forEach((lobo, index) => {
-            const caixaLobo = criarCaixaLobo(lobo, index_inicial + index)
-            container.appendChild(caixaLobo)
+          if (lobo !== null) {
+        const caixaLobo = criarCaixaLobo(lobo, index_inicial + index);
+        container.appendChild(caixaLobo);
+    } else {
+        console.log("lobo-id = null");
+    }
         })
  
         /* PAGINAÇÃO */
@@ -189,13 +196,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const lobo = JSON.parse(localStorage.getItem('loboId'))
+    if (lobo === null) { console.log('fodase')} else { 
 
-    const lobo_nome = document.querySelector('.lobo_nome')
-    lobo_nome.textContent = "Adotar " + lobo.nome
-
-    const descricao_lobo = document.querySelector('.descricao_lobo_escolhido')
-    descricao_lobo.textContent = lobo.descricao
-
-    let imagem_lobo = document.querySelector('.imagem_teste')
-    imagem_lobo.src = lobo.imagem
+        const lobo_nome = document.querySelector('.lobo_nome')
+        
+        lobo_nome.textContent = "Adotar " + lobo.nome
+    
+        const descricao_lobo = document.querySelector('.descricao_lobo_escolhido')
+        descricao_lobo.textContent = lobo.descricao
+    
+        let imagem_lobo = document.querySelector('.imagem_teste')
+        imagem_lobo.src = lobo.imagem
+    }
 })

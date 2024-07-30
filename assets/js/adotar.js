@@ -10,7 +10,19 @@ function enviarDados() {
   if (enviar) {
     const lobo = JSON.parse(localStorage.getItem('loboId'))
     let lobos_lista = JSON.parse(localStorage.getItem('lobos'))
-    lobos_lista.splice(lobo.id - 1, 1)
+    lobos_lista[lobo.id - 1] = {
+      "id": lobo.id,
+      "nome": lobo.nome,
+      "idade": lobo.idade,
+      "descricao": lobo.descricao,
+      "imagem": lobo.imagem,
+      "adotado": true,
+      "nomeDono": nome,
+      "idadeDono": idade,
+      "emailDono": email
+    }
+    localStorage.setItem('lobos', JSON.stringify(lobos_lista))
+
     alert("O lobinho foi adotado com sucesso!");
   } else {
     alert("O lobinho não foi adotado.");
