@@ -78,7 +78,11 @@ input {
 }
 
 .form_completo {
-    width: 960px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
     height: fit-content;
 }
 
