@@ -20,10 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 lobos_lista = data
+                localStorage.setItem('lobos', JSON.stringify(lobos_lista))
+                lobos_lista = JSON.parse(localStorage.getItem('lobos'))
                 aplicarFiltros()
                 return lobos_lista
             })
-    }
+    }  
     carregarLobos()
 
     function criarNovoLobo(novo_lobo) {
@@ -202,8 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
     btn_avançar.addEventListener('click', () => {
-        const lobos_adotados = adotados_checkbox.checked
-        const lobos_filtrados = lobos.filter(lobo => lobos_adotados ? lobo.adotado : !lobo.adotado)
         if (pagina_inicial * tamanho_pagina < lobos_filtrados.length) {
             pagina_inicial++
             atualizarExibicao()
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lobo = JSON.parse(localStorage.getItem('loboId'))
 
     const lobo_nome = document.querySelector('.lobo_nome')
-    lobo_nome.textContent = lobo.nome
+    lobo_nome.textContent = "Adotar " + lobo.nome
 
     const descricao_lobo = document.querySelector('.descricao_lobo_escolhido')
     descricao_lobo.textContent = lobo.descricao

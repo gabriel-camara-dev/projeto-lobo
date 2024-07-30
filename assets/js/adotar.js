@@ -27,14 +27,13 @@ function loboAdotado() {
   .catch(error => console.error('Erro ao carregar o JSON:', error));
 }
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const lobo = JSON.parse(localStorage.getItem('loboId'))
 
     var lobo_nome = document.querySelector('.nome_lobo')
     lobo_nome.textContent = "Adotar o(a) " + lobo.nome
 
     const id_lobo = document.querySelector(".id_lobo")
-
     id_lobo.textContent = "ID:" + lobo.id
 
     let imagem_lobo = document.querySelector('.img_adotar_lobo')
