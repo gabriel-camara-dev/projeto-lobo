@@ -8,24 +8,15 @@ function enviarDados() {
   } else {
   let enviar = confirm('Tem certeza que deseja adotar o lobinho?');
   if (enviar) {
-    loboAdotado();
+    const lobo = JSON.parse(localStorage.getItem('loboId'))
+    let lobos_lista = JSON.parse(localStorage.getItem('lobos'))
+    lobos_lista.splice(lobo.id - 1, 1)
     alert("O lobinho foi adotado com sucesso!");
   } else {
     alert("O lobinho não foi adotado.");
     }
   }
 };
-
-function loboAdotado() {
-    fetch('assets/js/lobinhos.json')
-  .then(response => response.json())
-  .then(data => {
-    // 'data' é um array de objetos, escreve tudo aqui dentro
-
-    console.log(data);
-  })
-  .catch(error => console.error('Erro ao carregar o JSON:', error));
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     const lobo = JSON.parse(localStorage.getItem('loboId'))

@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                "emailDono":null
           }
 
-          lobos_lista.unshift(lobo)
+          lobos_lista.push(lobo)
           localStorage.setItem('lobos', JSON.stringify(lobos_lista))
      }
      function resetarInputs() {
