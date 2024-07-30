@@ -1,4 +1,4 @@
-# Adote um Lobinho 🐺
+# 🐺 Alcateia do Seth - Adote um Lobinho 🐺
 
 Um projeto para o Processo Seletivo da empresa IN Junior que consiste em um site interativo que exibe uma lista de lobos para adoção, utilizando HTML, CSS, JavaScript e manipulação do DOM para fornecer uma experiência dinâmica ao usuário.
 
