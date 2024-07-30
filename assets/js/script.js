@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const lobos_adotados = adotados_checkbox.checked
 
         lobos_filtrados = lobos_lista.filter(lobo => {
-            if (lobo === null) { console.log('fodase')} 
+            if (lobo === null) {} 
             else { const nomeMatch = lobo.nome.toLowerCase().includes(termo_procurar)
                 const adotadoMatch = lobos_adotados ? lobo.adotado : !lobo.adotado
                 return nomeMatch && adotadoMatch
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const lobo = JSON.parse(localStorage.getItem('loboId'))
-    if (lobo === null) { console.log('fodase')} else { 
+    if (lobo === null) {} else { 
 
         const lobo_nome = document.querySelector('.lobo_nome')
         
