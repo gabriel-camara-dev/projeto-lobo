@@ -135,7 +135,6 @@
 
 .middle_section {
     display: flex;
-    flex: 1;
     flex-direction: column;
     height: 340px;
     width: 100vw;
