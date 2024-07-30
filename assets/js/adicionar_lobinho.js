@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                alert('Insira uma descrição para seu lobo')
           }
 
-          let lobos_lista = JSON.parse(localStorage.getItem('lobos_atualizados')) || []
+          let lobos_lista = JSON.parse(localStorage.getItem('lobos')) || []
           let lobo = {
                "id": lobos_lista.length,
                "nome": `${nome}`,
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                "emailDono":null
           }
 
-          lobos_lista.push(lobo)
+          lobos_lista.unshift(lobo)
           localStorage.setItem('lobos', JSON.stringify(lobos_lista))
      }
      function resetarInputs() {
