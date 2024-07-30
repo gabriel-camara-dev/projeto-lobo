@@ -47,3 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     carregandoJSON(); 
 })
+
+if (!localStorage.getItem('lobos_atualizados')) {
+    let lobos_atualizados = JSON.parse(localStorage.getItem('lobos'));
+    localStorage.setItem('lobos_atualizados', JSON.stringify(lobos_atualizados));
+}
