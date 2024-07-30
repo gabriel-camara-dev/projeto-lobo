@@ -6,9 +6,6 @@ body {
     min-height: 100vh;
     margin: 0;
 }
-.middle_section {
-    flex-grow: 1;
-}
 
 .title_quem_somos {
     display: flex;
