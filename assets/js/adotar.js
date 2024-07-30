@@ -1,14 +1,19 @@
 function enviarDados() {
-        let nome = document.getElementById("form_nome").value;
-        let idade = document.getElementById("form_idade").value;
-        let email = document.getElementById("form_email").value;
-        let enviar = confirm('Tem certeza que deseja adotar o lobinho?');
-        if (enviar) {
-            loboAdotado();
-            alert("O lobinho foi adotado com sucesso!");
-        } else {
-            alert("O lobinho não foi adotado.");
-        }
+  let nome = document.getElementById("form_nome").value;
+  let idade = document.getElementById("form_idade").value;
+  let email = document.getElementById("form_email").value;
+  if (nome == "" || idade == "" || email == "") {
+    alert("Preencha todos os campos!");
+    return;
+  } else {
+  let enviar = confirm('Tem certeza que deseja adotar o lobinho?');
+  if (enviar) {
+    loboAdotado();
+    alert("O lobinho foi adotado com sucesso!");
+  } else {
+    alert("O lobinho não foi adotado.");
+    }
+  }
 };
 
 function loboAdotado() {
@@ -16,6 +21,7 @@ function loboAdotado() {
   .then(response => response.json())
   .then(data => {
     // 'data' é um array de objetos, escreve tudo aqui dentro
+
     console.log(data);
   })
   .catch(error => console.error('Erro ao carregar o JSON:', error));
