@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 })
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const lobo = JSON.parse(localStorage.getItem('loboId'))
 
     const lobo_nome = document.querySelector('.lobo_nome')
