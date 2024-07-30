@@ -52,6 +52,7 @@ input , textarea {
      border: 1px solid #333333;
      height: 39px;
      font-size: 30px;
+     padding: 10px;
 }
 
 .adicionar_lobinho_nome {width: 560px;}
