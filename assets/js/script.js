@@ -8,36 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn_voltar = document.querySelector('.btn_voltar')
     const btn_avançar = document.querySelector('.btn_avançar')
     const adotados_checkbox = document.querySelector('.adotados_checkbox')
-    
-    btn_voltar.textContent = '<<'
-    btn_avançar.textContent = '>>'
+    const input_barra_pesquisa = document.querySelector('.input_barra_pesquisa')
+    const botao_procurar = document.querySelector('.botao_procurar')
 
-    let lobos_lista = []
+    let lobos_lista = JSON.parse(localStorage.getItem('lobos'))
     let lobos_filtrados = []
+    aplicarFiltros()
 
-    function carregarLobos() {
-        return fetch('assets/js/lobinhos.json')
-            .then(response => response.json())
-            .then(data => {
-                lobos_lista = data
-                localStorage.setItem('lobos', JSON.stringify(lobos_lista))
-                lobos_lista = JSON.parse(localStorage.getItem('lobos'))
-                aplicarFiltros()
-                return lobos_lista
-            })
-    }  
-    carregarLobos()
-
-    function criarNovoLobo(novo_lobo) {
-        return fetch('assets/js/lobinhos.json')
-            .then(response => response.json())
-            .then(data => {
-                lobos = data
-                lobos_lista.unshift(novo_lobo)
-                atualizarExibicao() 
-                return lobos
-            })}
-   
     function criarCaixaLobo(lobo, index) {
         const caixaLobo = document.createElement('div')
         caixaLobo.classList.add('caixa_lobo')
@@ -121,6 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return caixaLobo
     }
+
+    botao_procurar.addEventListener('click', aplicarFiltros)
+    input_barra_pesquisa.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            aplicarFiltros()
+        }
+    })
  
     function aplicarFiltros() {
         const termo_procurar = input_barra_pesquisa.value.toLowerCase()
@@ -137,18 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0)
     }
 
-    let input_barra_pesquisa = document.querySelector('.input_barra_pesquisa')
-    let botao_procurar = document.querySelector('.botao_procurar')
-
-    botao_procurar.addEventListener('click', aplicarFiltros)
-    input_barra_pesquisa.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            aplicarFiltros()
-        }
-    })
-
     function atualizarExibicao() {
-        console.log(lobos_lista)
+        console.log(lobos_filtrados)
         container.innerHTML = ''
 
         const index_inicial = (pagina_inicial - 1) * tamanho_pagina
@@ -193,8 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     adotados_checkbox.addEventListener('change', aplicarFiltros)
 
-    console.log(lobos_filtrados)
-
     /* PAGINAÇÃO */
     btn_voltar.addEventListener('click', () => {
         if (pagina_inicial > 1) {
@@ -210,6 +182,9 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo(0, 0)
         }
     })
+
+    btn_voltar.textContent = '<<'
+    btn_avançar.textContent = '>>'
     /**/
     
 })

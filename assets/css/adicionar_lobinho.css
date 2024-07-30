@@ -67,4 +67,5 @@ input , textarea {
      color: white;
      padding: 16px 71px;
      border: 1px solid black;
+     cursor: pointer;
 }
